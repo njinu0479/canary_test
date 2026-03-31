@@ -1,0 +1,16 @@
+name: CI/CD Canary Deployment
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  canary-deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: 소스코드 형상 최신화 Checkout
+      uses: actions/checkout@v3
+
+    - name: 카나리 무중단 배포 쉘 스크립트 실행 명령 하달
+      run: bash ./deploy.sh
