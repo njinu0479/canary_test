@@ -62,3 +62,4 @@ if [ "$TARGET" == "green" ]; then update_nginx_weight 0 100; else update_nginx_w
 
 # 7. 이제 쓸모없어진 구버전 컨테이너를 삭제(rm)합니다!
 docker rm -f app-$CURRENT
+
